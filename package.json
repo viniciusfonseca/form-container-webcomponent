@@ -1,11 +1,12 @@
 {
-  "name": "vanilla",
+  "name": "form-container-webcomponent",
+  "license": "MIT",
   "version": "1.0.0",
   "description": "",
-  "main": "./public/index.html",
+  "main": "./dist/form-container-webcomponent.js",
   "scripts": {
     "start": "parcel ./public/index.html --open",
-    "build": "parcel build ./public/index.html"
+    "build": "parcel build ./src/index.js --out-file dist/form-container-webcomponent.js"
   },
   "dependencies": {
     "preact": "10.1.1"
