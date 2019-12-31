@@ -4,7 +4,7 @@ This is a custom, reactive HTML Form element made with Preact & Parcel following
 
 Before you start to develop, run `npm install`, then run `npm start`.
 
-To make a production build, run `npm run build`. The resulting script is located at `dist/index.js`.
+To make a production build, run `npm run build`. The resulting script is located at `dist/form-container-webcomponent.js`.
 
 To use the component, you just include the script at the body of any document you'd like and call the component with the tags `<form-container> ... </form-container>`.
 
@@ -90,8 +90,8 @@ function withForm(formEl: FormContainerElement): IFormBuilder
 
 ```ts
 interface IFormBuilder {
-    input(inputName: string, options: IInputOptions): IFormBuilder,
-    error(selector: string, name: string)
+    input(inputName: string, options: IInputOptions): IFormBuilder
+    error(selector: string, name: string): IFormBuilder
 }
 ```
 
