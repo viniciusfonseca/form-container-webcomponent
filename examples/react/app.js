@@ -1,24 +1,20 @@
 import React, { useRef, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import { useFormContainer } from './useFormContainer'
 
 function App() {
 
-    /** @type {React.MutableRefObject<HTMLElement>} */
-    const formContainer = useRef()
-
-    useEffect(() => {
-        const form = formContainer.current
-        form.addEventListener('formsubmit', event => {
-            console.log('got form on react:', event.detail)
-        })
-        window.withForm(form)
-            .input('name', {
-                defaultValue: 'Vinicius'
-            })
-            .input('email', {
-                defaultValue: 'vfonseca1618@gmail.com'
-            })
-    }, [])
+    const { ref: formContainer } = useFormContainer({
+        withForm(getBuilder) {
+            getBuilder()
+                .input('name', {
+                    defaultValue: 'Vinicius'
+                })
+                .input('email', {
+                    defaultValue: 'vfonseca1618@gmail.com'
+                })
+        }
+    })
 
     return (
         <form-container ref={formContainer}>
