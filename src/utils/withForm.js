@@ -35,10 +35,7 @@ function prebootstrap(formEl) {
     Object.assign(formEl, {
         __bootstrapped: true,
         update(payload) {
-            this.state = {
-                ...this.state,
-                ...payload
-            }
+            this.state = { ...this.state, ...payload }
         }
     })
 }

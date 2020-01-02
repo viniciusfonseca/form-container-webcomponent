@@ -8,13 +8,15 @@ export function FormContainer({ nativeElement: formEl }) {
     const [getForm, setForm, updateForm] = useObjectState(formEl.state || {});
     formEl.state = formEl.state || {};
 
+    Object.assign(formEl, {
+        __bootstrapped: true,
+        update(payload) {
+            this.state = { ...this.state, ...payload }
+            setForm(payload);
+        }
+    })
+
     useEffect(() => {
-        Object.assign(formEl, {
-            __bootstrapped: true,
-            update(payload) {
-                setForm(payload);
-            }
-        });
         formEl.addEventListener("input", event => {
             const {
                 name = event.target.getAttribute('name'),
