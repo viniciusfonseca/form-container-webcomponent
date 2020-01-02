@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Material Design Example </title>
+        
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    </head>
+    <body>
+
+        <form-container>
+            <form autocomplete="off" action="javascript:void(0)">
+
+                <label class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                    <input type="text" name="name" class="mdc-text-field__input">
+                    <span class="mdc-floating-label"> Name </span>
+                    <div class="mdc-text-field__bottom-line"></div>
+                </label>
+
+                <label class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                    <input type="text" name="email" class="mdc-text-field__input">
+                    <span class="mdc-floating-label"> Email </span>
+                    <div class="mdc-text-field__bottom-line"></div>
+                </label>
+
+                <debug-form></debug-form>
+
+            </form>
+        </form-container>
+        
+        <script src="../../dist/form-container-webcomponent.js"></script>
+        <script>
+            const form = document.querySelector("form-container");
+            withForm(form)
+                .input("name", {
+                    defaultValue: "Vinicius",
+                    validate(value) {
+                        return value.length > 0;
+                    }
+                })
+                .input("email", {
+                    defaultValue: "vfonseca1618@gmail.com",
+                    validate(value) {
+                        return value.length > 0;
+                    }
+                });
+            mdc.autoInit()
+        </script>
+    </body>
+</html>

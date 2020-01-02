@@ -24,6 +24,9 @@ export function FormContainer({ nativeElement: formEl }) {
         });
         formEl.addEventListener("submit", () => {
             logActivity("submit", void 0, formEl.state)
+            formEl.dispatchEvent(
+                new CustomEvent("formsubmit", { detail: getForm() })
+            )
         })
         updateForm(formEl.state)
     }, []);
