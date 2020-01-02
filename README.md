@@ -38,7 +38,7 @@ Example:
 </html>
 ```
 
-Every element inside the form-container that fires the `input` event will immediatelly notify the form container and update its internal state. But in order to notify registered inputs to update its values when the form's state changes, you have to register every input inside it.
+Every element inside the form-container that fires the `input` event will immediatelly notify the form container and update its internal state, according to its `name` attribute. But in order to notify registered inputs to update its values when the form's state changes, you have to register every input inside it.
 
 To register an input, add a script to the body of the document and call the `withForm` function:
 
@@ -65,8 +65,9 @@ You can attach a `submit` event to the form container to capture its internal st
 
 ```js
 const form = document.querySelector("form-container");
-form.addEventListener('submit', event => {
-
+form.addEventListener('formsubmit', event => {
+  const data = event.detail
+  // ...
 })
 ```
 
@@ -109,3 +110,5 @@ interface IInputOptions {
 * [ ] Add validation when input blurs
 * [ ] Add validation when form submit, prevent its propagation when has errors
 * [ ] Add error messages to validations
+* [ ] Add examples with Material (static), Bootstrap (static), React, Angular, Vue
+* [ ] Add support to other types of input, eg. checkbox, radio, 
