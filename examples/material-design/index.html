@@ -12,16 +12,26 @@
         <form-container>
             <form autocomplete="off" action="javascript:void(0)">
 
-                <label class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                <label class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
                     <input type="text" name="name" class="mdc-text-field__input">
-                    <span class="mdc-floating-label"> Name </span>
-                    <div class="mdc-text-field__bottom-line"></div>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="tf-outlined" class="mdc-floating-label"> Name </label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
                 </label>
 
-                <label class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                <label class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
                     <input type="text" name="email" class="mdc-text-field__input">
-                    <span class="mdc-floating-label"> Email </span>
-                    <div class="mdc-text-field__bottom-line"></div>
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="tf-outlined" class="mdc-floating-label"> Email </label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
                 </label>
 
                 <debug-form></debug-form>
